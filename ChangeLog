@@ -1,5 +1,5 @@
 Revision history for Perl suite Games::Worms
-                                        Time-stamp: "1999-03-03 20:51:37 MST"
+                                        Time-stamp: "2004-12-29 19:36:41 AST"
 
 1999-02-15  Sean M. Burke  sburke@netadventure.net
 
@@ -16,3 +16,6 @@ Revision history for Perl suite Games::Worms
 	* Release 0.61:  public alpha release 3
 	Wrote some preliminary docs
 
+2004-12-29  Sean M. Burke  sburke@cpan.org
+
+	* Release 0.62:  Just rebundling; no code changes.

@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 package Games::Worms;
-# Time-stamp: "1999-03-03 21:28:29 MST" -*-Perl-*-
+# Time-stamp: "2004-12-29 19:34:27 AST" -*-Perl-*-
 
 require 5;
 use strict;
@@ -9,7 +9,7 @@ use vars qw(%Options $VERSION $Debug @ISA @EXPORT @EXPORT_OK);
 use Getopt::Std;
 use Games::Worms::Board; # for _try_use
 
-$VERSION = "0.61";
+$VERSION = "0.62";
 $Debug = 0;
 @ISA = qw(Exporter);
 @EXPORT = qw(worms);

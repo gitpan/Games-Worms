@@ -1,22 +1,17 @@
-# This -*- perl -*- script writes the Makefile for Worms
-# Time-stamp: "1999-03-03 12:06:19 MST"
+# This -*-perl-*- script writes the Makefile for installing this distribution.
+#
+# See "perldoc perlmodinstall" or "perldoc ExtUtils::MakeMaker" for
+# info on how to control how the installation goes.
+#
+#                                       Time-stamp: "2004-12-29 22:28:29 AST"
+
 require 5.004;
 use strict;
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
-   NAME          => 'Games-Worms',
+   NAME          => 'Games::Worms',
    VERSION_FROM  => 'lib/Games/Worms.pm',
-   'dist'        => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
+   'EXE_FILES' => [qw(worms)],
+   'dist'        => { COMPRESS => 'gzip -6f', SUFFIX => 'gz', },
 );
-
-package MY;
-
-sub libscan
-{ # Determine things that should *not* be installed
-    my($self, $path) = @_;
-    return '' if $path =~ m/~/;
-    $path;
-}
-
-__END__

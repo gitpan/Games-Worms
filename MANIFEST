@@ -1,8 +1,4 @@
 ChangeLog
-MANIFEST
-Makefile
-Makefile.PL
-README
 lib/Games/Worms.pm
 lib/Games/Worms/Base.pm
 lib/Games/Worms/Beeler.pm
@@ -20,5 +16,11 @@ lib/Games/Worms/Tek4010/Seg.pm
 lib/Games/Worms/Tk.pm
 lib/Games/Worms/Tk/Board.pm
 lib/Games/Worms/Tk/Seg.pm
-test.pl
+Makefile.PL
+MANIFEST
+MANIFEST.SKIP
+README
+t/00_about_verbose.t
+t/01_old_junk.t
 worms
+META.yml                                 Module meta-data (added by MakeMaker)
