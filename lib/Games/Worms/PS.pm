@@ -1,5 +1,7 @@
-# Time-stamp: "1999-03-03 11:25:45 MST" -*-Perl-*-
+# Time-stamp: "1999-03-03 19:54:41 MST" -*-Perl-*-
 package Games::Worms::PS;
+
+# This module provides a PostScript interface for Worms
 
 use strict;
 use Games::Worms::PS::Seg;

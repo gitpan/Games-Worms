@@ -1,5 +1,5 @@
 Revision history for Perl suite Games::Worms
-                                        Time-stamp: "1999-03-03 11:41:50 MST"
+                                        Time-stamp: "1999-03-03 20:51:37 MST"
 
 1999-02-15  Sean M. Burke  sburke@netadventure.net
 
@@ -10,3 +10,9 @@ Revision history for Perl suite Games::Worms
 	* Release 0.60:  public alpha release 2
 	renamed to Games::Worms
 	Tek4010 and PS (PostScript) output modes now
+
+1999-03-03  Sean M. Burke  sburke@netadventure.net
+
+	* Release 0.61:  public alpha release 3
+	Wrote some preliminary docs
+

@@ -1,7 +1,24 @@
-# Time-stamp: "1999-03-03 11:28:00 MST" -*-Perl-*-
+# Time-stamp: "1999-03-03 19:57:44 MST" -*-Perl-*-
 package Games::Worms::Base;
  # base class for worms
 use strict;
+
+=head1 NAME
+
+Games::Worms::Base -- base class for worms
+
+=head1 SYNOPSIS
+
+  package Spunky;
+  use Games::Worms::Random;
+  @ISA = ('Games::Worms::Random');
+  ...stuff...
+
+=head1 DESCRIPTION
+
+This is the base class for all worms in Worms.
+
+=cut
 
 use vars qw($Debug $VERSION @Colors $Color_counter $Directions);
 $Debug = 0;

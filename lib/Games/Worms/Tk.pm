@@ -1,4 +1,4 @@
-# Time-stamp: "1999-03-03 11:23:28 MST" -*-Perl-*-
+# Time-stamp: "1999-03-03 19:50:07 MST" -*-Perl-*-
 package Games::Worms::Tk;
 
 use strict;
@@ -9,7 +9,7 @@ use Games::Worms::Node;
 use vars qw($Debug $VERSION @ISA);
 
 $Debug = 0;
-$VERSION = "0.60";
+$VERSION = "0.61";
 
 sub main {
   my $mw = MainWindow->new;

@@ -1,16 +1,35 @@
-# Time-stamp: "1999-03-03 11:27:35 MST" -*-Perl-*-
+# Time-stamp: "1999-03-03 20:21:18 MST" -*-Perl-*-
 package Games::Worms::Beeler;
 use strict;
 use vars qw($Debug $VERSION @ISA);
-use Games::Worms::Base;
+use Games::Worms::Base 0.6;
 @ISA = ('Games::Worms::Base');
 $Debug = 0;
 $VERSION = "0.60";
 
 my %let2num = qw(A 1 B 2 C 3 D 4);
 
-#--------------------------------------------------------------------------
+=head1 NAME
 
+Games::Worms::Beeler -- class for Conway/Patterson/Beeler worms
+
+=head1 SYNOPSIS
+
+  perl -MGames::Worms -e worms -- -tTk Games::Worms::Beeler/1a2d3cbaa4b
+
+=head1 DESCRIPTION
+
+This class implements Conway/Patterson/Beeler worms -- "Beeler worms"
+for short.
+
+See the I<Scientific American> reference in L<Games::Worms>.
+
+Note that my notation for rule-strings is directly taken from that
+article.
+
+=cut
+
+#--------------------------------------------------------------------------
 # init rules.
 
 sub init {

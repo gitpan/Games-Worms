@@ -1,4 +1,4 @@
-# Time-stamp: "1999-03-03 11:24:20 MST" -*-Perl-*-
+# Time-stamp: "1999-03-03 19:54:20 MST" -*-Perl-*-
 package Games::Worms::Tek4010;
 
 use strict;
@@ -7,6 +7,8 @@ use Games::Worms::Tek4010::Board;
 use Games::Worms::Node;
 use vars qw($Debug $VERSION @ISA);
 use vars qw( $Start_tek $End_tek  $Pen_up $Pen_down );
+
+# This module provides a Tektronics interface for Worms
 
 $Debug = 0;
 $VERSION = '0.60';

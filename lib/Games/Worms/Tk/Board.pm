@@ -1,7 +1,7 @@
-# Time-stamp: "1999-03-03 11:23:07 MST" -*-Perl-*-
+# Time-stamp: "1999-03-03 19:28:39 MST" -*-Perl-*-
 package Games::Worms::Tk::Board;
 use strict;
-use Games::Worms::Board;
+use Games::Worms::Board 0.6;
 use vars qw($Debug $VERSION %Default @ISA);
 @ISA = ('Games::Worms::Board');
 use Tk qw/DoOneEvent DONT_WAIT exit/;
@@ -45,7 +45,7 @@ sub Node { return 'Games::Worms::Node' }
 #  my $mw = $board->{'window'} || die "No window?";
 #  $mw->Dialog(
 #    -title => 'About',
-#    -text => "TkWorms version $Games::TkWorms::VERSION\n\nSean M. Burke",
+#    -text => "Worms version $Games::Worms::VERSION\n\nSean M. Burke",
 #    -bitmap => 'info',
 #    -buttons => ["Dismiss"]
 #  );
@@ -58,7 +58,7 @@ sub window_init {
   my $mw = $board->{'window'} || die "No window?";
 
   $mw->toplevel->title($Debug ?
-    "TkWorms v$Games::Worms::Tk::VERSION" : 'TkWorms'
+    "Worms v$Games::Worms::Tk::VERSION" : 'Worms'
   );
 
   my $menubar = $mw->Frame;
@@ -67,10 +67,10 @@ sub window_init {
   $menubar->gridColumnconfigure(qw/0 -weight 1/);
 
   my $about_button = $mw->Dialog(
-    -text => "TkWorms version $Games::Worms::Tk::VERSION\n
+    -text => "Worms version $Games::Worms::Tk::VERSION\n
 Sean M. Burke
 <sburke\@netadventure.net>",
-    -title => 'About TkWorms',
+    -title => 'About Worms',
     -bitmap => 'info',
     -buttons => ["OK"]
   );
@@ -82,7 +82,7 @@ Sean M. Burke
     ])->grid(qw/-sticky w/); 
   my $about = $menubar->Menubutton(qw/-text About -underline 0 -menuitems/ =>
     [
-     [Button    => "~About TkWorms", -command => [ $about_button => 'Show' ]],
+     [Button    => "~About Worms", -command => [ $about_button => 'Show' ]],
     ])->grid(qw/-row 0 -column 1 -sticky w/); 
 
   $board->{'canvas'} = $mw->Canvas(

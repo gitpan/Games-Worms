@@ -1,6 +1,7 @@
-# Time-stamp: "1999-03-03 11:46:35 MST" -*-Perl-*-
+# Time-stamp: "1999-03-03 19:56:26 MST" -*-Perl-*-
 package Games::Worms::Board;
- # class that encapsulates a worm universe.
+
+# A (base) class encapsulating a worm universe.
 
 use strict;
 use vars qw($Debug $VERSION %Default $Use_Error %Boards);

@@ -42,9 +42,9 @@ AR_STATIC_ARGS = cr
 NAME = Games-Worms
 DISTNAME = Games-Worms
 NAME_SYM = Games_Worms
-VERSION = 0.60
-VERSION_SYM = 0_60
-XS_VERSION = 0.60
+VERSION = 0.61
+VERSION_SYM = 0_61
+XS_VERSION = 0.61
 INST_BIN = ./blib/bin
 INST_EXE = ./blib/script
 INST_LIB = ./blib/lib
@@ -97,7 +97,11 @@ C_FILES =
 O_FILES = 
 H_FILES = 
 MAN1PODS = 
-MAN3PODS = 
+MAN3PODS = lib/Games/Worms.pm \
+	lib/Games/Worms/Base.pm \
+	lib/Games/Worms/Beeler.pm \
+	lib/Games/Worms/Random.pm \
+	lib/Games/Worms/Random2.pm
 INST_MAN1DIR = ./blib/man1
 INSTALLMAN1DIR = /usr/local/gnu/man/man1
 MAN1EXT = 1
@@ -156,38 +160,38 @@ TO_INST_PM = lib/Games/Worms.pm \
 
 PM_TO_BLIB = lib/Games/Worms/Tk/Seg.pm \
 	$(INST_LIB)/Games/Worms/Tk/Seg.pm \
-	lib/Games/Worms/Tk.pm \
-	$(INST_LIB)/Games/Worms/Tk.pm \
-	lib/Games/Worms/Seg.pm \
-	$(INST_LIB)/Games/Worms/Seg.pm \
 	lib/Games/Worms/Beeler.pm \
 	$(INST_LIB)/Games/Worms/Beeler.pm \
-	lib/Games/Worms/Tek4010/Board.pm \
-	$(INST_LIB)/Games/Worms/Tek4010/Board.pm \
-	lib/Games/Worms.pm \
-	$(INST_LIB)/Games/Worms.pm \
 	lib/Games/Worms/PS/Seg.pm \
 	$(INST_LIB)/Games/Worms/PS/Seg.pm \
-	lib/Games/Worms/Random.pm \
-	$(INST_LIB)/Games/Worms/Random.pm \
-	lib/Games/Worms/PS.pm \
-	$(INST_LIB)/Games/Worms/PS.pm \
+	lib/Games/Worms.pm \
+	$(INST_LIB)/Games/Worms.pm \
 	lib/Games/Worms/Random2.pm \
 	$(INST_LIB)/Games/Worms/Random2.pm \
-	lib/Games/Worms/Node.pm \
-	$(INST_LIB)/Games/Worms/Node.pm \
 	lib/Games/Worms/Tk/Board.pm \
 	$(INST_LIB)/Games/Worms/Tk/Board.pm \
 	lib/Games/Worms/Tek4010/Seg.pm \
 	$(INST_LIB)/Games/Worms/Tek4010/Seg.pm \
-	lib/Games/Worms/Board.pm \
-	$(INST_LIB)/Games/Worms/Board.pm \
-	lib/Games/Worms/Tek4010.pm \
-	$(INST_LIB)/Games/Worms/Tek4010.pm \
 	lib/Games/Worms/PS/Board.pm \
 	$(INST_LIB)/Games/Worms/PS/Board.pm \
 	lib/Games/Worms/Base.pm \
-	$(INST_LIB)/Games/Worms/Base.pm
+	$(INST_LIB)/Games/Worms/Base.pm \
+	lib/Games/Worms/Seg.pm \
+	$(INST_LIB)/Games/Worms/Seg.pm \
+	lib/Games/Worms/Tk.pm \
+	$(INST_LIB)/Games/Worms/Tk.pm \
+	lib/Games/Worms/Tek4010/Board.pm \
+	$(INST_LIB)/Games/Worms/Tek4010/Board.pm \
+	lib/Games/Worms/Random.pm \
+	$(INST_LIB)/Games/Worms/Random.pm \
+	lib/Games/Worms/PS.pm \
+	$(INST_LIB)/Games/Worms/PS.pm \
+	lib/Games/Worms/Node.pm \
+	$(INST_LIB)/Games/Worms/Node.pm \
+	lib/Games/Worms/Board.pm \
+	$(INST_LIB)/Games/Worms/Board.pm \
+	lib/Games/Worms/Tek4010.pm \
+	$(INST_LIB)/Games/Worms/Tek4010.pm
 
 
 # --- MakeMaker tool_autosplit section:
@@ -348,6 +352,16 @@ $(INST_ARCHAUTODIR)/.exists :: /usr/local/gnu/lib/perl5/aix/5.00404/CORE/perl.h
 
 	-@$(CHMOD) 755 $(INST_ARCHAUTODIR)
 
+config :: $(INST_MAN3DIR)/.exists
+	@$(NOOP)
+
+
+$(INST_MAN3DIR)/.exists :: /usr/local/gnu/lib/perl5/aix/5.00404/CORE/perl.h
+	@$(MKPATH) $(INST_MAN3DIR)
+	@$(EQUALIZE_TIMESTAMP) /usr/local/gnu/lib/perl5/aix/5.00404/CORE/perl.h $(INST_MAN3DIR)/.exists
+
+	-@$(CHMOD) 755 $(INST_MAN3DIR)
+
 help:
 	perldoc ExtUtils::MakeMaker
 
@@ -396,10 +410,29 @@ static :: Makefile $(INST_STATIC)
 
 
 # --- MakeMaker manifypods section:
+POD2MAN_EXE = /usr/local/gnu/bin/pod2man
+POD2MAN = $(PERL) -we '%m=@ARGV;for (keys %m){' \
+-e 'next if -e $$m{$$_} && -M $$m{$$_} < -M $$_ && -M $$m{$$_} < -M "Makefile";' \
+-e 'print "Manifying $$m{$$_}\n";' \
+-e 'system(qq[$$^X ].q["-I$(PERL_ARCHLIB)" "-I$(PERL_LIB)" $(POD2MAN_EXE) ].qq[$$_>$$m{$$_}])==0 or warn "Couldn\047t install $$m{$$_}\n";' \
+-e 'chmod 0644, $$m{$$_} or warn "chmod 644 $$m{$$_}: $$!\n";}'
 
-manifypods :
-	@$(NOOP)
-
+manifypods : lib/Games/Worms/Beeler.pm \
+	lib/Games/Worms/Random.pm \
+	lib/Games/Worms.pm \
+	lib/Games/Worms/Base.pm \
+	lib/Games/Worms/Random2.pm
+	@$(POD2MAN) \
+	lib/Games/Worms/Beeler.pm \
+	$(INST_MAN3DIR)/Games::Worms::Beeler.$(MAN3EXT) \
+	lib/Games/Worms/Random.pm \
+	$(INST_MAN3DIR)/Games::Worms::Random.$(MAN3EXT) \
+	lib/Games/Worms.pm \
+	$(INST_MAN3DIR)/Games::Worms.$(MAN3EXT) \
+	lib/Games/Worms/Base.pm \
+	$(INST_MAN3DIR)/Games::Worms::Base.$(MAN3EXT) \
+	lib/Games/Worms/Random2.pm \
+	$(INST_MAN3DIR)/Games::Worms::Random2.$(MAN3EXT)
 
 # --- MakeMaker processPL section:
 
@@ -426,7 +459,7 @@ clean ::
 # Delete temporary files (via clean) and also delete installed files
 realclean purge ::  clean
 	rm -rf $(INST_AUTODIR) $(INST_ARCHAUTODIR)
-	rm -f $(INST_LIB)/Games/Worms/Tk/Seg.pm $(INST_LIB)/Games/Worms/Tk.pm $(INST_LIB)/Games/Worms/Seg.pm $(INST_LIB)/Games/Worms/Beeler.pm $(INST_LIB)/Games/Worms/Tek4010/Board.pm $(INST_LIB)/Games/Worms.pm $(INST_LIB)/Games/Worms/PS/Seg.pm $(INST_LIB)/Games/Worms/Random.pm $(INST_LIB)/Games/Worms/PS.pm $(INST_LIB)/Games/Worms/Random2.pm $(INST_LIB)/Games/Worms/Node.pm $(INST_LIB)/Games/Worms/Tk/Board.pm $(INST_LIB)/Games/Worms/Tek4010/Seg.pm $(INST_LIB)/Games/Worms/Board.pm $(INST_LIB)/Games/Worms/Tek4010.pm $(INST_LIB)/Games/Worms/PS/Board.pm $(INST_LIB)/Games/Worms/Base.pm
+	rm -f $(INST_LIB)/Games/Worms/Tk/Seg.pm $(INST_LIB)/Games/Worms/Beeler.pm $(INST_LIB)/Games/Worms/PS/Seg.pm $(INST_LIB)/Games/Worms.pm $(INST_LIB)/Games/Worms/Random2.pm $(INST_LIB)/Games/Worms/Tk/Board.pm $(INST_LIB)/Games/Worms/Tek4010/Seg.pm $(INST_LIB)/Games/Worms/PS/Board.pm $(INST_LIB)/Games/Worms/Base.pm $(INST_LIB)/Games/Worms/Seg.pm $(INST_LIB)/Games/Worms/Tk.pm $(INST_LIB)/Games/Worms/Tek4010/Board.pm $(INST_LIB)/Games/Worms/Random.pm $(INST_LIB)/Games/Worms/PS.pm $(INST_LIB)/Games/Worms/Node.pm $(INST_LIB)/Games/Worms/Board.pm $(INST_LIB)/Games/Worms/Tek4010.pm
 	rm -rf Makefile Makefile.old
 
 

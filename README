@@ -1,37 +1,9 @@
 README for Worms
-                                        Time-stamp: "1999-03-03 11:56:27 MST"
+                                        Time-stamp: "1999-03-03 21:19:35 MST"
 
 				Worms
 
-!!!! THIS IS AN UNDOCUMENTED ALPHA RELEASE !!!!
-
-Worms is an implementation of an artificial-life game that can output
-via Perl-Tk, Tek4010, and PostScript.  It is a game not in the sense
-of checkers, but in the sense of Conway's Life.
-
-In a Worms universe, worms crawl around an isometric grid of
-triangles, leaving trails behind them, and turning in accordance to
-simple rules that are based upon trails they come in contact with.
-From the simple rules emerges surprising complexity.
-
-
-BUGS & WARNINGS
-
-Occasionally I've seen Perl 5.004_02 for MSWin segfault at global
-destruction time.
-
-The TK part, I've only tested under pTk.  This's my first hack at Tk,
-so lets hope all the code I wrote is portable.  Suggestions welcome!
-
-The Tek part I've tested under MSKermit.
-
-The PostScript part I've tested only under GhostScript.
-
-
-Currently the interface is pretty much: specify things on the command
-line, then sit back and watch the worms go, until they all die.
-Hopefully I (or someone ambitious who knows Tk better than I do) may
-add more interactivity to the interface.
+!!!! THIS IS AN ALPHA RELEASE !!!!
 
 
 PREREQUISITES
@@ -58,50 +30,8 @@ something like this command:
 
 DOCUMENTATION
 
-None yet.
-
-Start it up by making a Perl program called worms, with the content:
-
-!/usr/bin/perl
-use Games::Worms;
-worms;
-
-Then start up Tk mode with:
-
-  worms -tTk
-    ...for Tk mode
-  worms -tPS
-    ...for PostScript mode
-  worms -tTek4010
-    ...for Tektronics mode
-
-Command line arguments thereafter are interpreted as the names of
-classes worms should come from.  (Currently, three are provided in
-this distribution: Games::Worms::Random, Games::Worms::Random2, and
-Games::Worms::Beeler.)  If no arguments are provided, Worms uses two
-Random2s and two Beelers.
-
-For each name you specify, if it contains a slash, the rest of that
-name is passed to the worm as an expression of its rules.
-
-Example specifications:
-
-  Games::Worms::Beeler
-  Games::Worms::Random
-  Games::Worms::Random2
-  Games::Worms::Beeler/1a2d3caaa4b
-  Games::Worms::Beeler/1A2B3ACAC4B
-  Games::Worms::Beeler/1B2B3AAAB4A
-
-(A Beeler worm with no rules specified makes up a random rule set
-when it starts.  A random worm obeys no rules.)
-
-See the Sci Am article on Beeler worms for the meaning of these Beeler
-worm rule specifications.  I don't have the citation for the first run
-of the article, but it's reproduced with addenda as:
-
-"Worm Paths", chapter 17 in Martin Gardner, 1986, /Knotted Doughnuts
-and Other Mathematical Entertainments/, W. H. Freeman and Company.
+See the pods in Games::Worms, Games::Worms::Base,
+Games::Worms::Beeler, Games::Worms::Random, Games::Worms::Random2,
 
 
 SUPPORT
