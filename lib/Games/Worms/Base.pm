@@ -1,4 +1,3 @@
-# Time-stamp: "1999-03-03 19:57:44 MST" -*-Perl-*-
 package Games::Worms::Base;
  # base class for worms
 use strict;

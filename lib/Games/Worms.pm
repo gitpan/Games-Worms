@@ -1,6 +1,5 @@
 #!/usr/bin/perl
 package Games::Worms;
-# Time-stamp: "2004-12-29 19:34:27 AST" -*-Perl-*-
 
 require 5;
 use strict;
@@ -9,7 +8,7 @@ use vars qw(%Options $VERSION $Debug @ISA @EXPORT @EXPORT_OK);
 use Getopt::Std;
 use Games::Worms::Board; # for _try_use
 
-$VERSION = "0.62";
+$VERSION = "0.63";
 $Debug = 0;
 @ISA = qw(Exporter);
 @EXPORT = qw(worms);
@@ -159,13 +158,13 @@ Read the source.  It's OOPilicious!
 
 =head1 COPYRIGHT
 
-Copyright 1999, Sean M. Burke C<sburke@netadventure.net>, all rights
+Copyright 1999-2006, Sean M. Burke C<sburke@netadventure.net>, all rights
 reserved.  This program is free software; you can redistribute it
 and/or modify it under the same terms as Perl itself.
 
 =head1 AUTHOR
 
-Sean M. Burke C<sburke@netadventure.net>
+Current maintainer Avi Finkel C<avi@finkel.org>; Original author Sean M. Burke C<sburke@cpan.org>
 
 =cut
 
@@ -176,12 +175,12 @@ Sean M. Burke C<sburke@netadventure.net>
 sub worms {
   getopts('t:vh', \%Options);
   if($Options{'v'}) {
-    print "Worms v$VERSION by Sean M. Burke, sburke\@netadventure.net\n";
+    print "Worms v$VERSION\n";
     exit;
   }
   if($Options{'h'}) {
     print <<"EOHELP"; exit;
-Worms v$VERSION by Sean M. Burke, sburke\@netadventure.net
+Worms v$VERSION
 Switches:
   -t[Interface] -- set the interface
      examples:  -tTk  -tPS  -tTek4010

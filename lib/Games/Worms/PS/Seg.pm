@@ -1,4 +1,3 @@
-# Time-stamp: "1999-03-03 11:22:01 MST" -*-Perl-*-
 package Games::Worms::PS::Seg;
 use strict;
 use vars qw($Debug $VERSION @ISA);

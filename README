@@ -1,5 +1,4 @@
 README for Worms
-                                        Time-stamp: "1999-03-03 21:19:35 MST"
 
 				Worms
 
@@ -49,11 +48,12 @@ find a CPAN site near you.
 
 COPYRIGHT
 
-Copyright 1999, Sean M. Burke <sburke@netadventure.net>, all rights
+Copyright 1999 - 2006, Sean M. Burke <sburke@cpan.org>, all rights
 reserved.  This program is free software; you can redistribute it
 and/or modify it under the same terms as Perl itself.
 
 
 AUTHOR
 
-Sean M. Burke <sburke@netadventure.net>
+Current maintainer Avi Finkel <avi@finkel.org>;
+Original author Sean M. Burke <sburke@cpan.org>

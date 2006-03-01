@@ -1,4 +1,3 @@
-# Time-stamp: "1999-03-03 20:21:18 MST" -*-Perl-*-
 package Games::Worms::Beeler;
 use strict;
 use vars qw($Debug $VERSION @ISA);

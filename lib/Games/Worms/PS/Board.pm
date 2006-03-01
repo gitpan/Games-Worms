@@ -1,4 +1,3 @@
-# Time-stamp: "1999-03-03 11:22:15 MST" -*-Perl-*-
 package Games::Worms::PS::Board;
 use strict;
 use Games::Worms::Board;

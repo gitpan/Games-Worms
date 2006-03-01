@@ -1,4 +1,3 @@
-# Time-stamp: "1999-03-03 11:26:01 MST" -*-Perl-*-
 package Games::Worms::Node;
  # class that encapsulates nodes, i.e., where segments intersect
 use strict;

@@ -1,4 +1,3 @@
-# Time-stamp: "1999-03-03 19:56:26 MST" -*-Perl-*-
 package Games::Worms::Board;
 
 # A (base) class encapsulating a worm universe.
