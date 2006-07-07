@@ -22,5 +22,7 @@ MANIFEST.SKIP
 README
 t/00_about_verbose.t
 t/01_old_junk.t
+t/02_pod.t
+t/03_pod_cover.t
 worms
 META.yml                                 Module meta-data (added by MakeMaker)
