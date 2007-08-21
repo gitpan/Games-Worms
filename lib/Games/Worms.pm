@@ -8,7 +8,7 @@ use vars qw(%Options $VERSION $Debug @ISA @EXPORT @EXPORT_OK);
 use Getopt::Std;
 use Games::Worms::Board; # for _try_use
 
-$VERSION = "0.64";
+$VERSION = "0.65";
 $Debug = 0;
 @ISA = qw(Exporter);
 @EXPORT = qw(worms);

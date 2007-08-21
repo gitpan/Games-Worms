@@ -26,3 +26,7 @@ Revision history for Perl suite Games::Worms
 2006-07-07  Avi Finkel  avi@finkel.org
 
 	* Release 0.64:  Fixing up some tests
+
+2007-08-21  Avi Finkel  avi@finkel.org
+
+	* Release 0.65:  Cleaning up makefile / dependencies
